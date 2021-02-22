@@ -1,0 +1,21 @@
+{% extends 'base/base.html' %}
+
+{% block 'name' %} Blog- {% endblock %}
+
+{% block 'body' %}
+
+<div class="container">
+    <div class="row">
+        <h3>{{device.name}}</h3>
+        <div class="col-md-6">
+            <img src="{{MEDIA_URL}} {{device.image.url}}" style="width:200px;height=auto;">
+        </div>
+        <p>
+            {{device.description}}
+        </p>
+
+    </div>
+
+</div>
+
+{% endblock %}

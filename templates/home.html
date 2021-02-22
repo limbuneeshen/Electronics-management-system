@@ -1,0 +1,27 @@
+{% extends 'base/base.html' %}
+
+{% block 'name' %} Home Page {% endblock %}
+
+{% block 'body' %}
+
+   <div class="container"  style="padding-left:50px;">
+       {% for b in device %}
+       <div class="row">
+           <div class="col-md-12 col-md-offset-3" >
+            <div><h3>{{b.name}} <br></h3></div>
+           <div><span>{{b.type}} | {{b.publish_date}}<br> <br></span>
+           </br></div>
+           <div>{% if b.image %}
+           <img src="{{MEDIA_URL}}{{b.image.url}}" style="width:150px;height:150px;">
+           {% endif %}
+               <br><br>
+           </div>
+           <div style="padding-bottom:50px; padding-left:10px;">
+           <a href="{% url 'views_more' b.id %}" class="btn btn-primary">View More</a>
+           </div>
+           <hr>
+               <br><br>
+       </div>
+       {% endfor %}
+   </div>
+{% endblock %}

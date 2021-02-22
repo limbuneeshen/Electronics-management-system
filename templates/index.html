@@ -1,0 +1,25 @@
+
+{% extends 'base/base.html' %}
+{% load static %}
+{% block 'name' %} Home {% endblock %}
+
+{% block 'body' %}
+<!-- Banner -->
+
+	<div class="banner">
+		<h2 class="banner_text" align="center">new era of electronics</h2><br><br>
+		<div class="banner_background" style="background-image:url(images/banner_background.jpg); height:20px;"></div>
+		<div class="container fill_height">
+			<div class="row fill_height">
+				<div ><img src="{% static 'images/banner_product.png' %}" alt=""></div>
+				<div class="col-lg-4 offset-lg-3 fill_height">
+					<div class="banner_content">
+
+			<div class="button banner_button"><a href="{% url 'home' %}">Shop Now</a></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+{% endblock %}
